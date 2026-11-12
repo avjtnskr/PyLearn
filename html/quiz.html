@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Test your Python foundations with 20 practice questions, instant feedback, explanations, and a score you can review."
+    />
+    <meta name="theme-color" content="#2563a6" />
+    <title>PyLearn | Python Practice Quiz</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Main navigation">
+        <a class="logo" href="index.html" aria-label="PyLearn home"
+          ><span class="logo-mark" aria-hidden="true">Py</span
+          ><span>PyLearn<span style="color: var(--blue)">.</span></span></a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="main-navigation"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" /></svg
+          ><span class="menu-label">Menu</span>
+        </button>
+        <ul class="nav-links" id="main-navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="introduction.html">Introduction</a></li>
+          <li><a href="basics.html">Basics</a></li>
+          <li><a href="control-flow.html">Control Flow</a></li>
+          <li><a href="functions.html">Functions</a></li>
+          <li><a href="data-structures.html">Data Structures</a></li>
+          <li>
+            <a class="active nav-quiz" aria-current="page" href="quiz.html"
+              >Quiz</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="reading-track" aria-hidden="true"><span></span></div>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <section class="page-hero">
+        <div class="container">
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a
+            ><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m9 5 7 7-7 7" /></svg
+            ><a href="index.html#course">The course</a
+            ><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m9 5 7 7-7 7" /></svg
+            ><span aria-current="page">A little practice. A lot learned.</span>
+          </nav>
+          <p class="eyebrow">Put your knowledge to work</p>
+          <h1>A little practice. A lot learned.</h1>
+          <p class="intro">
+            You’ve met the concepts. Now make them yours. Take your time, try an
+            answer, and learn from the explanations.
+          </p>
+          <div class="lesson-meta">
+            <span
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 5c-3-2-7-2-10-1v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1Zm0 0v15"
+                /></svg
+              >20 questions</span
+            ><span
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" /></svg
+              >No time limit</span
+            ><span
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m5 12 4 4L19 6" /></svg
+              >Instant feedback</span
+            >
+          </div>
+        </div>
+      </section>
+      <div class="quiz-shell container">
+        <aside
+          class="quiz-dashboard"
+          aria-labelledby="quiz-dashboard-title"
+          hidden
+        >
+          <h2 id="quiz-dashboard-title">Your progress</h2>
+          <p id="quiz-status">0 of 20 answered</p>
+          <div class="progress-track" aria-hidden="true">
+            <span id="quiz-progress"></span>
+          </div>
+          <nav class="quiz-question-map" aria-label="Jump to a question">
+            <a href="#question-1" aria-label="Question 1: unanswered">1</a
+            ><a href="#question-2" aria-label="Question 2: unanswered">2</a
+            ><a href="#question-3" aria-label="Question 3: unanswered">3</a
+            ><a href="#question-4" aria-label="Question 4: unanswered">4</a
+            ><a href="#question-5" aria-label="Question 5: unanswered">5</a
+            ><a href="#question-6" aria-label="Question 6: unanswered">6</a
+            ><a href="#question-7" aria-label="Question 7: unanswered">7</a
+            ><a href="#question-8" aria-label="Question 8: unanswered">8</a
+            ><a href="#question-9" aria-label="Question 9: unanswered">9</a
+            ><a href="#question-10" aria-label="Question 10: unanswered">10</a
+            ><a href="#question-11" aria-label="Question 11: unanswered">11</a
+            ><a href="#question-12" aria-label="Question 12: unanswered">12</a
+            ><a href="#question-13" aria-label="Question 13: unanswered">13</a
+            ><a href="#question-14" aria-label="Question 14: unanswered">14</a
+            ><a href="#question-15" aria-label="Question 15: unanswered">15</a
+            ><a href="#question-16" aria-label="Question 16: unanswered">16</a
+            ><a href="#question-17" aria-label="Question 17: unanswered">17</a
+            ><a href="#question-18" aria-label="Question 18: unanswered">18</a
+            ><a href="#question-19" aria-label="Question 19: unanswered">19</a
+            ><a href="#question-20" aria-label="Question 20: unanswered">20</a>
+          </nav>
+          <p class="quiz-legend">
+            <span><i aria-hidden="true"></i>Correct</span
+            ><span><i aria-hidden="true"></i>Review</span>
+          </p>
+        </aside>
+        <div class="quiz-main">
+          <p class="quiz-help">
+            <strong>Here to learn, not to rush.</strong> Choose one answer per
+            question. You can change your answers, open any explanation, and
+            check your current score at the end.
+          </p>
+          <noscript
+            ><p class="tip-box">
+              Answers and explanations work without JavaScript. Enable
+              JavaScript for scoring and the question navigator.
+            </p></noscript
+          >
+          <p
+            class="sr-only"
+            id="quiz-feedback"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          ></p>
+          <form class="quiz-form" aria-label="Python practice quiz">
+            <fieldset class="quiz-card" data-question="1" id="question-1">
+              <legend>
+                <span class="question-number">Question 01 / 20</span>Who created
+                Python?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q1-a" name="q1" type="radio" value="a" /> A.
+                  Dennis Ritchie</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q1-b" name="q1" type="radio" value="b" /> B. Guido
+                  van Rossum</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q1-c" name="q1" type="radio" value="c" /> C. James
+                  Gosling</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q1-d" name="q1" type="radio" value="d" /> D.
+                  Bjarne Stroustrup</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> B. Guido van Rossum created Python.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="2" id="question-2">
+              <legend>
+                <span class="question-number">Question 02 / 20</span>Which
+                function displays output in Python?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q2-a" name="q2" type="radio" value="a" /> A.
+                  show()</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q2-b" name="q2" type="radio" value="b" /> B.
+                  display()</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q2-c" name="q2" type="radio" value="c" /> C.
+                  print()</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q2-d" name="q2" type="radio" value="d" /> D.
+                  output()</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> C. <code>print()</code> displays
+                  output.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="3" id="question-3">
+              <legend>
+                <span class="question-number">Question 03 / 20</span>Which data
+                type stores text?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q3-a" name="q3" type="radio" value="a" /> A.
+                  int</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q3-b" name="q3" type="radio" value="b" /> B.
+                  float</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q3-c" name="q3" type="radio" value="c" /> C.
+                  str</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q3-d" name="q3" type="radio" value="d" /> D.
+                  bool</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> C. <code>str</code> stores string or
+                  text values.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="4" id="question-4">
+              <legend>
+                <span class="question-number">Question 04 / 20</span>Which
+                operator checks equality?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q4-a" name="q4" type="radio" value="a" /> A.
+                  =</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q4-b" name="q4" type="radio" value="b" /> B.
+                  ==</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q4-c" name="q4" type="radio" value="c" /> C.
+                  !=</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q4-d" name="q4" type="radio" value="d" /> D.
+                  &gt;=</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> B. <code>==</code> compares two
+                  values.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="5" id="question-5">
+              <legend>
+                <span class="question-number">Question 05 / 20</span>What does
+                <code>range(1, 4)</code> produce?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option correct"
+                  ><input id="q5-a" name="q5" type="radio" value="a" /> A. 1, 2,
+                  3</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q5-b" name="q5" type="radio" value="b" /> B. 1, 2,
+                  3, 4</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q5-c" name="q5" type="radio" value="c" /> C. 0, 1,
+                  2, 3</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q5-d" name="q5" type="radio" value="d" /> D. 4
+                  only</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> A. The stop value is not included.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="6" id="question-6">
+              <legend>
+                <span class="question-number">Question 06 / 20</span>Which
+                keyword creates a function?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q6-a" name="q6" type="radio" value="a" /> A.
+                  function</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q6-b" name="q6" type="radio" value="b" /> B.
+                  define</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q6-c" name="q6" type="radio" value="c" /> C.
+                  def</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q6-d" name="q6" type="radio" value="d" /> D.
+                  fun</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p><strong>Answer:</strong> C. Python uses <code>def</code>.</p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="7" id="question-7">
+              <legend>
+                <span class="question-number">Question 07 / 20</span>Which
+                statement stops a loop immediately?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q7-a" name="q7" type="radio" value="a" /> A.
+                  skip</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q7-b" name="q7" type="radio" value="b" /> B.
+                  stop</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q7-c" name="q7" type="radio" value="c" /> C.
+                  continue</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q7-d" name="q7" type="radio" value="d" /> D.
+                  break</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> D. <code>break</code> exits the loop.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="8" id="question-8">
+              <legend>
+                <span class="question-number">Question 08 / 20</span>Which
+                collection is immutable?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q8-a" name="q8" type="radio" value="a" /> A.
+                  list</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q8-b" name="q8" type="radio" value="b" /> B.
+                  tuple</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q8-c" name="q8" type="radio" value="c" /> C.
+                  dict</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q8-d" name="q8" type="radio" value="d" /> D.
+                  set</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> B. A tuple cannot be changed after
+                  creation.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="9" id="question-9">
+              <legend>
+                <span class="question-number">Question 09 / 20</span>Which
+                module can generate random numbers?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q9-a" name="q9" type="radio" value="a" /> A.
+                  math</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q9-b" name="q9" type="radio" value="b" /> B.
+                  random</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q9-c" name="q9" type="radio" value="c" /> C.
+                  datetime</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q9-d" name="q9" type="radio" value="d" /> D.
+                  number</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> B. The <code>random</code> module can
+                  generate random numbers.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="10" id="question-10">
+              <legend>
+                <span class="question-number">Question 10 / 20</span>Which data
+                structure stores key-value pairs?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q10-a" name="q10" type="radio" value="a" /> A.
+                  list</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q10-b" name="q10" type="radio" value="b" /> B.
+                  tuple</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q10-c" name="q10" type="radio" value="c" /> C.
+                  dict</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q10-d" name="q10" type="radio" value="d" /> D.
+                  set</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> C. A dictionary stores key-value
+                  pairs.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="11" id="question-11">
+              <legend>
+                <span class="question-number">Question 11 / 20</span>Which
+                symbol is used for comments in Python?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q11-a" name="q11" type="radio" value="a" /> A.
+                  //</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q11-b" name="q11" type="radio" value="b" /> B.
+                  #</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q11-c" name="q11" type="radio" value="c" /> C. /*
+                  */</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q11-d" name="q11" type="radio" value="d" /> D.
+                  &lt;!-- --&gt;</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> B. Python single-line comments start
+                  with <code>#</code>.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="12" id="question-12">
+              <legend>
+                <span class="question-number">Question 12 / 20</span>Which
+                function converts a string to an integer?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q12-a" name="q12" type="radio" value="a" /> A.
+                  str()</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q12-b" name="q12" type="radio" value="b" /> B.
+                  float()</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q12-c" name="q12" type="radio" value="c" /> C.
+                  int()</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q12-d" name="q12" type="radio" value="d" /> D.
+                  bool()</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> C. <code>int()</code> converts a
+                  suitable value to an integer.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="13" id="question-13">
+              <legend>
+                <span class="question-number">Question 13 / 20</span>Which
+                operator gives the remainder after division?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q13-a" name="q13" type="radio" value="a" /> A.
+                  /</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q13-b" name="q13" type="radio" value="b" /> B.
+                  //</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q13-c" name="q13" type="radio" value="c" /> C.
+                  %</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q13-d" name="q13" type="radio" value="d" /> D.
+                  **</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> C. The modulus operator
+                  <code>%</code> gives the remainder.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="14" id="question-14">
+              <legend>
+                <span class="question-number">Question 14 / 20</span>What is the
+                output of <code>print(2 ** 3)</code>?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q14-a" name="q14" type="radio" value="a" /> A.
+                  5</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q14-b" name="q14" type="radio" value="b" /> B.
+                  6</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q14-c" name="q14" type="radio" value="c" /> C.
+                  8</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q14-d" name="q14" type="radio" value="d" /> D.
+                  9</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> C. <code>**</code> is the exponent
+                  operator, so 2 cubed is 8.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="15" id="question-15">
+              <legend>
+                <span class="question-number">Question 15 / 20</span>Which
+                method adds an item to the end of a list?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q15-a" name="q15" type="radio" value="a" /> A.
+                  add()</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q15-b" name="q15" type="radio" value="b" /> B.
+                  append()</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q15-c" name="q15" type="radio" value="c" /> C.
+                  insert_end()</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q15-d" name="q15" type="radio" value="d" /> D.
+                  push()</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> B. <code>append()</code> adds an item
+                  to the end of a list.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="16" id="question-16">
+              <legend>
+                <span class="question-number">Question 16 / 20</span>Which
+                keyword imports a module?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q16-a" name="q16" type="radio" value="a" /> A.
+                  include</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q16-b" name="q16" type="radio" value="b" /> B.
+                  import</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q16-c" name="q16" type="radio" value="c" /> C.
+                  module</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q16-d" name="q16" type="radio" value="d" /> D.
+                  use</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> B. Python uses the
+                  <code>import</code> keyword.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="17" id="question-17">
+              <legend>
+                <span class="question-number">Question 17 / 20</span>What does
+                <code>len()</code> do?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q17-a" name="q17" type="radio" value="a" /> A.
+                  Deletes a value</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q17-b" name="q17" type="radio" value="b" /> B.
+                  Counts items</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q17-c" name="q17" type="radio" value="c" /> C.
+                  Sorts a list</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q17-d" name="q17" type="radio" value="d" /> D.
+                  Converts text</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> B. <code>len()</code> returns the
+                  number of items.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="18" id="question-18">
+              <legend>
+                <span class="question-number">Question 18 / 20</span>Which value
+                is a Boolean?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q18-a" name="q18" type="radio" value="a" /> A.
+                  "Python"</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q18-b" name="q18" type="radio" value="b" /> B.
+                  3.14</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q18-c" name="q18" type="radio" value="c" /> C.
+                  True</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q18-d" name="q18" type="radio" value="d" /> D. [1,
+                  2]</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> C. <code>True</code> is a Boolean
+                  value.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="19" id="question-19">
+              <legend>
+                <span class="question-number">Question 19 / 20</span>Which loop
+                is best when the number of repetitions is known?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option correct"
+                  ><input id="q19-a" name="q19" type="radio" value="a" /> A. for
+                  loop</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q19-b" name="q19" type="radio" value="b" /> B.
+                  while loop</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q19-c" name="q19" type="radio" value="c" /> C. if
+                  loop</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q19-d" name="q19" type="radio" value="d" /> D.
+                  else loop</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> A. A <code>for</code> loop is
+                  commonly used when repetitions are known.
+                </p>
+              </details>
+            </fieldset>
+            <fieldset class="quiz-card" data-question="20" id="question-20">
+              <legend>
+                <span class="question-number">Question 20 / 20</span>Which
+                collection automatically removes duplicate values?
+              </legend>
+              <div class="quiz-options">
+                <label class="quiz-option wrong"
+                  ><input id="q20-a" name="q20" type="radio" value="a" /> A.
+                  list</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q20-b" name="q20" type="radio" value="b" /> B.
+                  tuple</label
+                >
+                <label class="quiz-option wrong"
+                  ><input id="q20-c" name="q20" type="radio" value="c" /> C.
+                  dict</label
+                >
+                <label class="quiz-option correct"
+                  ><input id="q20-d" name="q20" type="radio" value="d" /> D.
+                  set</label
+                >
+              </div>
+              <details>
+                <summary>Show explanation</summary>
+                <p>
+                  <strong>Answer:</strong> D. A set stores only unique values.
+                </p>
+              </details>
+            </fieldset>
+            <div class="quiz-actions">
+              <button class="btn btn-primary score-button" type="submit" hidden>
+                Check my score
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14m-6-6 6 6-6 6" />
+                </svg></button
+              ><button class="btn btn-secondary" type="reset">Start over</button
+              ><a class="btn btn-secondary" href="index.html#course"
+                >Review the lessons</a
+              >
+            </div>
+          </form>
+          <section
+            class="quiz-result"
+            tabindex="-1"
+            aria-labelledby="quiz-result-title"
+            hidden
+          >
+            <p class="eyebrow">Your current score</p>
+            <h2 id="quiz-result-title"></h2>
+            <p id="quiz-result-message"></p>
+            <a class="text-link" id="review-question" href="#question-1"
+              >Review questions →</a
+            >
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <a class="logo" href="index.html"
+              ><span class="logo-mark" aria-hidden="true">Py</span>PyLearn.</a
+            >
+            <p>
+              A little practice. A lot of possibility.<br />Python foundations
+              for O Level IT students.
+            </p>
+          </div>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="index.html#course">Explore the course</a
+            ><a href="quiz.html">Practice quiz</a
+            ><a href="#top">Back to top ↑</a>
+          </nav>
+        </div>
+        <p class="footer-copyright">
+          © 2026 PyLearn. Made for learning, one step at a time.
+        </p>
+      </div>
+    </footer>
+    <a class="back-to-top" href="#top" aria-label="Back to top"
+      ><svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 19V5m-6 6 6-6 6 6" /></svg
+    ></a>
+    <div
+      class="toast"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+  </body>
+</html>

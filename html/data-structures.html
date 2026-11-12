@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Organize your data with lists, tuples, dictionaries, and sets."
+    />
+    <meta name="theme-color" content="#2563a6" />
+    <title>PyLearn | Data Structures</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body id="top" data-lesson="data-structures">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Main navigation">
+        <a class="logo" href="index.html" aria-label="PyLearn home"
+          ><span class="logo-mark" aria-hidden="true">Py</span
+          ><span>PyLearn<span style="color: var(--blue)">.</span></span></a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="main-navigation"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" /></svg
+          ><span class="menu-label">Menu</span>
+        </button>
+        <ul class="nav-links" id="main-navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="introduction.html">Introduction</a></li>
+          <li><a href="basics.html">Basics</a></li>
+          <li><a href="control-flow.html">Control Flow</a></li>
+          <li><a href="functions.html">Functions</a></li>
+          <li>
+            <a class="active" aria-current="page" href="data-structures.html"
+              >Data Structures</a
+            >
+          </li>
+          <li><a class="nav-quiz" href="quiz.html">Quiz</a></li>
+        </ul>
+      </nav>
+      <div class="reading-track" aria-hidden="true"><span></span></div>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <section class="page-hero">
+        <div class="container">
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a
+            ><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m9 5 7 7-7 7" /></svg
+            ><a href="index.html#course">The course</a
+            ><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m9 5 7 7-7 7" /></svg
+            ><span aria-current="page">Data Structures</span>
+          </nav>
+          <p class="eyebrow">Chapter 05 / 05</p>
+          <h1>Data Structures</h1>
+          <p class="intro">
+            Data structures help store and organize many values in a single
+            variable.
+          </p>
+          <div class="lesson-meta">
+            <span
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" /></svg
+              >About 4 min read</span
+            ><span
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 5c-3-2-7-2-10-1v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1Zm0 0v15"
+                /></svg
+              >5 sections</span
+            ><span
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-14-2 16" /></svg
+              >Beginner friendly</span
+            >
+          </div>
+        </div>
+      </section>
+      <div class="lesson-layout container">
+        <aside class="lesson-sidebar" aria-label="Lesson contents">
+          <nav aria-labelledby="contents-label">
+            <p class="sidebar-title" id="contents-label">In this lesson</p>
+            <ul class="toc-links">
+              <li><a href="#lists">Lists</a></li>
+              <li><a href="#tuples">Tuples</a></li>
+              <li><a href="#dictionaries">Dictionaries</a></li>
+              <li><a href="#sets">Sets</a></li>
+              <li><a href="#comparison-table">Comparison Table</a></li>
+            </ul>
+          </nav>
+          <div class="sidebar-course">
+            <p class="sidebar-title">Your learning journey</p>
+            <p data-course-count>0 of 5 lessons complete</p>
+            <div class="progress-track" aria-hidden="true">
+              <span data-course-bar></span>
+            </div>
+            <a class="text-link" href="index.html#course"
+              >View all lessons
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14m-6-6 6 6-6 6" /></svg
+            ></a>
+          </div>
+        </aside>
+        <div class="lesson-body">
+          <section
+            aria-labelledby="lists-title"
+            class="content-section"
+            id="lists"
+          >
+            <h2 id="lists-title">Lists</h2>
+            <p>A list is ordered, changeable, and allows duplicate values.</p>
+            <p>
+              Use a list when you need to store several related values and may
+              need to add, remove, or update items later.
+            </p>
+            <div class="code-card">
+              <div class="code-card-header"><span>lists.py</span></div>
+              <pre
+                aria-label="Python code example; scroll horizontally if needed"
+                tabindex="0"
+              ><code>fruits = [<span class="code-str">"apple"</span>, <span class="code-str">"banana"</span>, <span class="code-str">"mango"</span>]
+<span class="code-fn">print</span>(fruits[<span class="code-num">0</span>])
+<span class="code-fn">print</span>(fruits[<span class="code-num">1</span>:<span class="code-num">3</span>])
+fruits.append(<span class="code-str">"orange"</span>)</code></pre>
+            </div>
+            <div class="output-box">
+              <strong>Output:</strong><br />apple<br />['banana', 'mango']
+            </div>
+            <ul class="method-list">
+              <li><code>append()</code> adds an item at the end.</li>
+              <li><code>remove()</code> removes a matching item.</li>
+              <li><code>len()</code> counts how many items are in the list.</li>
+            </ul>
+          </section>
+          <section
+            aria-labelledby="tuples-title"
+            class="content-section"
+            id="tuples"
+          >
+            <h2 id="tuples-title">Tuples</h2>
+            <p>
+              A tuple is ordered and immutable: you cannot replace, add, or
+              remove its items after creation.
+            </p>
+            <p>
+              Tuples are useful for values that should stay fixed, such as RGB
+              color values or coordinates.
+            </p>
+            <div class="code-card">
+              <div class="code-card-header"><span>tuples.py</span></div>
+              <pre
+                aria-label="Python code example; scroll horizontally if needed"
+                tabindex="0"
+              ><code>coordinates = (<span class="code-num">10</span>, <span class="code-num">20</span>)
+<span class="code-fn">print</span>(coordinates[<span class="code-num">0</span>])</code></pre>
+            </div>
+            <div class="output-box"><strong>Output:</strong><br />10</div>
+          </section>
+          <section
+            aria-labelledby="dictionaries-title"
+            class="content-section"
+            id="dictionaries"
+          >
+            <h2 id="dictionaries-title">Dictionaries</h2>
+            <p>A dictionary stores data as key-value pairs.</p>
+            <p>
+              Each key works like a label. This makes dictionaries useful for
+              records, profiles, and settings.
+            </p>
+            <div class="code-card">
+              <div class="code-card-header"><span>dictionaries.py</span></div>
+              <pre
+                aria-label="Python code example; scroll horizontally if needed"
+                tabindex="0"
+              ><code>student = {<span class="code-str">"name"</span>: <span class="code-str">"Asha"</span>, <span class="code-str">"age"</span>: <span class="code-num">16</span>}
+<span class="code-fn">print</span>(student[<span class="code-str">"name"</span>])
+student[<span class="code-str">"grade"</span>] = <span class="code-str">"A"</span></code></pre>
+            </div>
+            <div class="output-box"><strong>Output:</strong><br />Asha</div>
+            <ul class="method-list">
+              <li><code>keys()</code> returns all keys.</li>
+              <li><code>values()</code> returns all values.</li>
+              <li><code>get()</code> safely reads a value by key.</li>
+            </ul>
+          </section>
+          <section
+            aria-labelledby="sets-title"
+            class="content-section"
+            id="sets"
+          >
+            <h2 id="sets-title">Sets</h2>
+            <p>
+              A set stores unique values and supports operations such as union
+              and intersection.
+            </p>
+            <p>
+              Sets are helpful when duplicates should be removed automatically.
+            </p>
+            <div class="code-card">
+              <div class="code-card-header"><span>sets.py</span></div>
+              <pre
+                aria-label="Python code example; scroll horizontally if needed"
+                tabindex="0"
+              ><code>a = {<span class="code-num">1</span>, <span class="code-num">2</span>, <span class="code-num">3</span>}
+b = {<span class="code-num">3</span>, <span class="code-num">4</span>, <span class="code-num">5</span>}
+<span class="code-fn">print</span>(a.union(b))
+<span class="code-fn">print</span>(a.intersection(b))</code></pre>
+            </div>
+            <div class="output-box">
+              <strong>Output:</strong><br />{1, 2, 3, 4, 5}<br />{3}
+            </div>
+            <div class="tip-box">
+              <strong>Set order can vary:</strong> sets are unordered, so Python
+              may display these values in a different order. The values in the
+              result are what matter.
+            </div>
+          </section>
+          <section
+            aria-labelledby="comparison-table-title"
+            class="content-section"
+            id="comparison-table"
+          >
+            <h2 id="comparison-table-title">Comparison Table</h2>
+            <p class="table-hint">Scroll to see all columns →</p>
+            <div
+              aria-label="Comparison Table table; scroll horizontally on smaller screens"
+              class="table-wrap"
+              role="region"
+              tabindex="0"
+            >
+              <table>
+                <caption>
+                  Comparison Table reference
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Structure</th>
+                    <th scope="col">Ordered?</th>
+                    <th scope="col">Changeable?</th>
+                    <th scope="col">Best Used For</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>List</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>A sequence that may change, such as marks or names.</td>
+                  </tr>
+                  <tr>
+                    <td>Tuple</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td>Fixed data, such as coordinates.</td>
+                  </tr>
+                  <tr>
+                    <td>Dict</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Records with labels, such as student details.</td>
+                  </tr>
+                  <tr>
+                    <td>Set</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td>Unique values and membership testing.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="practice-box">
+              <h3>Practice Task</h3>
+              <p>
+                Create a dictionary for one student with keys for name, roll
+                number, and marks. Then print only the student's marks.
+              </p>
+            </div>
+            <p style="margin-top: 18px; font-size: 0.8rem">
+              Go further with the
+              <a
+                href="https://docs.python.org/3/tutorial/datastructures.html"
+                rel="noopener noreferrer"
+                target="_blank"
+                >official Python guide to data structures</a
+              >.
+            </p>
+          </section>
+          <section
+            class="lesson-complete"
+            aria-labelledby="complete-title"
+            hidden
+          >
+            <h2 id="complete-title">One step closer. Nicely done.</h2>
+            <p>
+              Read the examples and tried the practice task? Mark this lesson
+              complete, then keep going.
+            </p>
+            <button
+              class="btn btn-primary complete-button"
+              type="button"
+              aria-pressed="false"
+            >
+              Mark lesson complete</button
+            ><span class="save-note">Progress is saved in this browser.</span>
+          </section>
+          <nav class="lesson-pagination" aria-label="Lesson navigation">
+            <a href="functions.html"
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19 12H5m6-6-6 6 6 6" /></svg
+              ><span
+                ><small>Previous</small
+                ><strong>Functions and Modules</strong></span
+              ></a
+            ><a href="quiz.html"
+              ><span
+                ><small>Test your knowledge</small
+                ><strong>Python Quiz</strong></span
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14m-6-6 6 6-6 6" /></svg
+            ></a>
+          </nav>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <a class="logo" href="index.html"
+              ><span class="logo-mark" aria-hidden="true">Py</span>PyLearn.</a
+            >
+            <p>
+              A little practice. A lot of possibility.<br />Python foundations
+              for O Level IT students.
+            </p>
+          </div>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="index.html#course">Explore the course</a
+            ><a href="quiz.html">Practice quiz</a
+            ><a href="#top">Back to top ↑</a>
+          </nav>
+        </div>
+        <p class="footer-copyright">
+          © 2026 PyLearn. Made for learning, one step at a time.
+        </p>
+      </div>
+    </footer>
+    <a class="back-to-top" href="#top" aria-label="Back to top"
+      ><svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 19V5m-6 6 6-6 6 6" /></svg
+    ></a>
+    <div
+      class="toast"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+  </body>
+</html>
